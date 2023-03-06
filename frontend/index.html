@@ -36,6 +36,16 @@
         // Send the request over the network
         xhr.send(null);
     }
+    
+    function getCoordinates() {
+        console.log("Get Coordinates");
+        xhr = getXmlHttpRequestObject();
+        xhr.onreadystatechange = dataCallback;
+        // asynchronous requests
+        xhr.open("GET", "http://localhost:7070/iphandler", true);
+        // Send the request over the network
+        xhr.send(null);
+    }
     function getDate() {
         date = new Date().toString();
         document.getElementById('time-container').textContent

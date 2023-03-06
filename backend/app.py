@@ -73,7 +73,7 @@ def feedIP():
         res = conn.getresponse()
         data = json.loads(res.read())
         dictCoordinates[f'{data["ip"]}'] = format(f'{data["location"]["latitude"]},{data["location"]["longitude"]}')
-
+        time.sleep(1)
     conn.close() 
     return json.dumps(dictCoordinates)
 
